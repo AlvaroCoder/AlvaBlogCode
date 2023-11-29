@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <nav>
+    <nav className='w-full h-12  shadow-lg bg-black_2'>
         <Link to={"/"}><p>Home</p></Link>
     </nav>
     )

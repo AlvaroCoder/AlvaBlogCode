@@ -14,9 +14,14 @@ function PostDetails() {
         })()
     },[id])
   return (
-    <div>
+    <main className='w-full h-auto py-4 bg-black_1'>
+      <section className='w-full h-1/3'>
+
+      </section>
+      <section className='w-full col-span-full lg:col-span-7'>
         {detailPosts ? <PostDetail post={detailPosts} /> : null}
-    </div>
+      </section>
+    </main>
   )
 }
 

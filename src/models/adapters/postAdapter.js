@@ -6,7 +6,8 @@ export function postsAdapter(posts) {
             description : post.description,
             id : post.id,
             img : post.iconContent,
-            url : post.slug
+            url : post.slug,
+            createdAt : post.datecreatedAt
         }
     });
     return {contentPosts}

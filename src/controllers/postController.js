@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import PostView from '../views/postView';
 import { getContentPosts } from '../utils/fetchDataCMS';
 import { postsAdapter } from '../models/adapters/postAdapter';
-
+import {modelPost} from '../models/postModel'
 function PostController() {
     const [dataPosts, setDataPosts] = useState([
-        {title : '', description : '', id : '', url : '', img : ''}
+       modelPost
     ])
     useEffect(()=>{
         (async ()=>{
@@ -16,7 +16,7 @@ function PostController() {
         })();
     },[])
   return (
-    <div className='w-full min-h-screen'>
+    <div className='w-full min-h-screen bg-black_1'>
         <PostView contentData={dataPosts}/>
     </div>
     )
