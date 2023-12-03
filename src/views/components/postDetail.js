@@ -18,13 +18,13 @@ function PostDetail({post}) {
         }
         switch (type) {
             case 'heading-one':
-                return <h1 key={index} className='text-3xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>        
+                return <h1 key={index} className='text-white text-3xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>        
             case 'heading-two':
-                return <h2 key={index} className='text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
+                return <h2 key={index} className='text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
             case 'heading-three':
-                return <h3 key={index} className='text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
+                return <h3 key={index} className='text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
             case 'paragraph':
-                return <p key={index} className='mb-8'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
+                return <p key={index} className='text-white mb-8'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
             case 'image':
                 return(
                     <img
@@ -41,7 +41,6 @@ function PostDetail({post}) {
         <>
             {post.children.map((typeObj, index) => {
                 const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text, item));
-
                 return getContentFragment(index, children, typeObj, typeObj.type);
             })}
         </>
