@@ -33,6 +33,12 @@ function PostDetail({post}) {
                         src={obj.src}
                     />
                 )
+            case 'code-block':
+                return <div key={index} className=' bg-black_3 p-4 rounded-md mb-4'>
+                    <code className='font-mono whitespace-pre-wrap text-title_white overflow-x-auto'>
+                        {modifiedText.map((item,i)=><React.Fragment  key={i}>{item}</React.Fragment>)}
+                    </code>
+                </div>
             default:
                 return modifiedText;
         }
