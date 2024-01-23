@@ -3,6 +3,7 @@ import PostView from '../views/postView';
 import { getContentPosts } from '../utils/fetchDataCMS';
 import { postsAdapter } from '../models/adapters/postAdapter';
 import {modelPost} from '../models/postModel'
+import { SkeletonCard } from '../views/components';
 function PostController() {
     const [dataPosts, setDataPosts] = useState([
        modelPost
@@ -20,8 +21,14 @@ function PostController() {
     },[])
 if (Loading) {
     return (
-        <div>
-            <h1>Cargando</h1>
+        <div className='min-h-screen overflow-hidden bg-black_1 flex justify-center'>
+            <div className='overflow-hidden grid grid-cols-1 pb-8 md:grid-cols-2 px-4 py-4 w-full md:w-[80%] gap-2'>
+                <SkeletonCard/>
+                <SkeletonCard/>
+                <SkeletonCard/>
+                <SkeletonCard/>
+
+            </div>
         </div>
     )
 }

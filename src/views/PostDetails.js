@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getContenPostDetail } from '../utils/fetchDataCMS';
-import {PostDetail, PostDetailIntro} from './components'
+import {PostDetail, PostDetailIntro, SkeletonCard} from './components'
 function PostDetails() {
     const [detailPosts, setDetailPosts] = useState(null);
     const [Loading, setLoading] = useState(false);
@@ -17,9 +17,11 @@ function PostDetails() {
     },[id])
     if (Loading) {
       return(
-        <div>
-          <h1>Cargando</h1>
-        </div>
+          <div className='h-screen w-full overflow-hidden bg-black_1'>
+            <div className='overflow-hidden grid grid-cols-1 pb-8 md:grid-cols-2 px-4 py-4 w-full md:w-[80%] gap-2'>
+                <SkeletonCard/>
+            </div>
+          </div>
       )
     }
     return (
@@ -28,7 +30,7 @@ function PostDetails() {
           {detailPosts ?  <PostDetailIntro {...detailPosts} /> : null}
         </section>  
         <section className='w-full col-span-full lg:col-span-7 flex justify-center items-center py-6'>
-          <div className='w-[80%] bg-black_2 p-6 rounded-lg '>
+          <div className='md:w-[80%] w-full bg-black_2 p-6 rounded-lg '>
             {detailPosts ? <PostDetail post={detailPosts.content.json} /> : null}
           </div>
         </section>
