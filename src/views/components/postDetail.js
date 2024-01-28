@@ -18,13 +18,13 @@ function PostDetail({post}) {
         }
         switch (type) {
             case 'heading-one':
-                return <h1 key={index} className='text-white text-3xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>        
+                return <h1 key={index} className='font-serif text-white text-3xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>        
             case 'heading-two':
-                return <h2 key={index} className='text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
+                return <h2 key={index} className='font-serif text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
             case 'heading-three':
-                return <h3 key={index} className='text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
+                return <h3 key={index} className='font-serif text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
             case 'paragraph':
-                return <p key={index} className='text-white mb-8'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
+                return <p key={index} className='font-serif text-white mb-8'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
             case 'image':
                 return(
                     <img
@@ -38,6 +38,10 @@ function PostDetail({post}) {
                     <code className='font-mono whitespace-pre-wrap text-title_white overflow-x-auto'>
                         {modifiedText.map((item,i)=><React.Fragment  key={i}>{item}</React.Fragment>)}
                     </code>
+                </div>
+            case 'block-quote':
+                return <div key={index} className='w-full h-auto mb-4 px-4 py-1 my-2 border-l-4 border-white items-center '>
+                     <p className='text-white font-serif'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
                 </div>
             default:
                 return modifiedText;
