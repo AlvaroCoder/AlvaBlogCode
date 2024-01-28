@@ -1,6 +1,6 @@
 // process.env.REACT_APP_CMS_URL
 // https://backend-blog-alvacode.fly.dev
-const statusWork = "dev";
+const statusWork = "prod";
 const BASE_URL = statusWork === "dev" ? "http://localhost:8082" : "https://backend-blog-alvacode.fly.dev";
 
 export function getContentPosts() {
