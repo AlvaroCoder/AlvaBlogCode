@@ -4,7 +4,7 @@ import { NavBar } from './components';
 
 function Layout() {
   return (
-    <div>
+    <div >
         <NavBar/>
         <Outlet/>
     </div>

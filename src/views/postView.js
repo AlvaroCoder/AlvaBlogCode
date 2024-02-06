@@ -14,10 +14,10 @@ function PostView({
   return (
     <div className='w-full h-full py-4 md:px-8 flex justify-center '>
         <div className='w-[80%]'>
-            <h1 className='text-2xl text-title_white font-bold '>Blog</h1>
-            <div>
+            <h1 className='font-serif text-2xl text-title_white font-bold '>Últimos artículos</h1>
+            {/* <div>
                 <input onChange={handleChange} className='w-full  rounded-lg py-2 px-4 my-2 bg-black_2 text-title_white outline-none  ' placeholder='Buscar' />
-            </div>
+            </div> */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pb-8'>
                 {
                     data.map((val,key)=>{
