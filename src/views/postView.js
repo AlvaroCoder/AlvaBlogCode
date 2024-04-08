@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { PostContentCard } from './components';
+import { BannerPrincipal } from './components/elements';
 
 function PostView({
     contentData
@@ -14,7 +15,7 @@ function PostView({
   return (
     <div className='w-full h-full py-4 md:px-8 flex flex-col justify-center '>
         <section className='w-full h-screen'>
-        
+        <BannerPrincipal/>
         </section>
         <div className='w-full flex items-center justify-center'>
             <div className='max-w-[80%]'>
