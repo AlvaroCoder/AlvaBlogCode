@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getContenPostDetail } from '../utils/fetchDataCMS';
-import {CardTitles, PostDetail, PostDetailIntro, SkeletonCard} from './components'
+import {CardTitles, PostDetail, PostDetailIntro, PostReactions, SkeletonCard} from './components'
 function PostDetails() {
     const [detailPosts, setDetailPosts] = useState(null);
     const [Loading, setLoading] = useState(false);
@@ -46,7 +46,11 @@ function PostDetails() {
           <div className='md:w-[60%] w-full bg-black_2 p-6 rounded-lg '>
             {detailPosts ? <PostDetail post={detailPosts.content.json} /> : null}
           </div>
-          <CardTitles data={resume} />
+          <section className='mx-4 relative md:mb-0 mb-8 before:w-full before:!h-1 md:sticky top-0  p-6  '>
+            <div className='flex flex-col'>
+              <CardTitles data={resume} />
+            </div>
+          </section>
         </section>
       </main>
     )

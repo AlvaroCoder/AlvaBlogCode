@@ -18,3 +18,9 @@ export function getContenPostDetail(id) {
 
     })
 }
+export function getContentCategories() {
+    return fetch(`${BASE_URL}/posts/categories`,{
+        method : 'GET',
+        mode : 'cors'
+    })
+}

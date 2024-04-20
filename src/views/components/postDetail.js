@@ -33,6 +33,7 @@ function PostDetail({post}) {
                         key={index}
                         alt={obj.title}
                         src={obj.src}
+                        className='my-4'
                     />
                 )
             case 'code-block':

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PostView from '../views/postView';
-import { getContentPosts } from '../utils/fetchDataCMS';
-import { postsAdapter } from '../models/adapters/postAdapter';
+import { getContentCategories, getContentPosts } from '../utils/fetchDataCMS';
+import { categoriesAdapter, postsAdapter } from '../models/adapters/postAdapter';
 import {modelPost} from '../models/postModel'
 import { SkeletonCard } from '../views/components';
 function PostController() {
     const [dataPosts, setDataPosts] = useState([
        modelPost
     ]);
+    const [dataCategories, setDataCategories] = useState([]);
     const [Loading, setLoading] = useState(false);
     useEffect(()=>{
         (async ()=>{
@@ -15,6 +16,11 @@ function PostController() {
             const dataPosts = await getContentPosts();
             const jsonDataPosts = await dataPosts.json();
             const {contentPosts} = postsAdapter(jsonDataPosts) 
+            const dataCategories = await getContentCategories();
+            const jsonDataCategories = await dataCategories.json();
+            const {message} = jsonDataCategories;
+            const adapCategories = categoriesAdapter(message);
+            setDataCategories(adapCategories);
             setDataPosts(contentPosts);
             setLoading(false);
         })();
@@ -34,7 +40,7 @@ if (Loading) {
 }
 return (
     <div className='w-full min-h-screen bg-black_1'>
-        <PostView contentData={dataPosts}/>
+        <PostView contentData={dataPosts} contentCategories={dataCategories}/>
     </div>
     )
 }
