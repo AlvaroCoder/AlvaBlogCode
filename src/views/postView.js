@@ -13,8 +13,6 @@ function PostView({
     }
   return (
     <div className='w-full h-full py-4 md:px-8 flex flex-col justify-center '>
-        <section className='w-full h-screen'>
-        </section>
         <div className='w-full flex items-center justify-center'>
             <div className='max-w-[80%]'>
                 <h1 className='font-serif text-2xl text-title_white font-bold '>Últimos artículos</h1>
