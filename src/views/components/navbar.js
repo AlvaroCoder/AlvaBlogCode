@@ -26,9 +26,8 @@ function NavBar({changeBlur}) {
               })
             }
           </div> */}
-          <ButtonSearch />
           <a target='_blank' rel='noreferrer' aria-label='Sigueme en Instagram' href='https://www.instagram.com/alvarocoder/' >
-          <div className='cursor-pointer rounded-lg border-[1px] p-4 h-6 w-6 flex items-center justify-center mx-3 border-slate-600 hover:bg-slate-700 bg-gray-800'>
+          <div className='cursor-pointer rounded-lg border-[1px] p-6 h-8 w-8 flex items-center justify-center mx-3 border-slate-600 hover:bg-slate-700 bg-gray-800'>
             <InstagramIcon className='text-rojo'/>
           </div>
           </a>
