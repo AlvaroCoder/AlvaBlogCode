@@ -12,9 +12,9 @@ export default function PostBlog({
   return (
     <div className='flex flex-col'>
         {
-            img == null ? <div className='bg-slate-400 w-full h-60 rounded-lg'/> :
+            img == null ? <div className='bg-slate-400 w-full h-80 md:h-60 rounded-lg'/> :
             <a href={`post/${id}`}>
-                <img src={img['url']} alt='Imagen' className='w-full h-60 rounded-lg' />
+                <img src={img['url']} alt='Imagen' className='w-full h-80 md:h-60 object-cover rounded-lg' />
             </a>
         }
         <a href={`post/${id}`}>

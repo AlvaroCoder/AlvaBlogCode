@@ -11,8 +11,8 @@ export default function PostBlog({
 }) {
   
   return (
-    <div className='col-span-2 py-2 flex flex-col'>
-      <div className='w-full h-[60%] rounded-lg'>
+    <div className='col-span-2 py-2 flex flex-col '>
+      <div className='w-full lg:h-[70%] h-fit rounded-lg '>
         {
           img  == null ?       <div className='bg-slate-400 '/>:
           <a href={`post/${id}`}>
