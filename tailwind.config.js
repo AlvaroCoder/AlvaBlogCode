@@ -18,9 +18,20 @@ module.exports = {
         amarillo : "#EE9B00",
         amarillo_opaco : "rgba(238,155,0,.22)",
         blanco : "#E9D8A6",
-        rojo:"#AE2012"
+        rojo:"#AE2012",
+        naranja : "#FB8500"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({addUtilities}) {
+      const extendUnderline = {
+          '.underline': {
+              'textDecoration': 'underline',
+              'text-decoration-color': '#FB8500',
+          },
+      }
+      addUtilities(extendUnderline)
+  }
+  ],
 }
