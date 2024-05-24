@@ -15,6 +15,9 @@ function PostDetail({post}) {
               if (obj.underline) {
                 modifiedText = (<u key={index}>{text}</u>);
               }
+              if (obj.type==="link") {
+                modifiedText = (<a key={index} target='_blank'  rel="noreferrer" className='underline' href={obj.href}>{obj.children[0].text}</a>)
+              }
         }
         switch (type) {
             case 'heading-one':

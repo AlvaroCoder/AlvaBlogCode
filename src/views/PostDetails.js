@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getContenPostDetail } from '../utils/fetchDataCMS';
-import {CardTitles, PostDetail, PostDetailIntro, PostReactions, SkeletonCard} from './components'
+import {CardTitles, PostDetail, PostDetailIntro, SkeletonCard} from './components'
 function PostDetails() {
     const [detailPosts, setDetailPosts] = useState(null);
     const [Loading, setLoading] = useState(false);
