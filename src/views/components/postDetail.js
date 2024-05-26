@@ -22,14 +22,14 @@ function PostDetail({post}) {
         switch (type) {
             case 'heading-one':
                 return <div key={index} className='flex justify-start'>
-                    <h1  id={modifiedText[0]}  className='font-serif border-b-2 px-4 border-b-amarillo text-white text-4xl font-semibold my-10'>{modifiedText.map((item, i) => <React.Fragment key={i} >{item}</React.Fragment>)}</h1>
+                    <h1  id={modifiedText[0]}  className='font-sans border-b-2 px-4 border-b-amarillo text-white text-5xl font-semibold my-10'>{modifiedText.map((item, i) => <React.Fragment key={i} >{item}</React.Fragment>)}</h1>
                 </div>        
             case 'heading-two':
-                return <h2 key={index} className='font-serif text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
+                return <h2 key={index} className='font-sans text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
             case 'heading-three':
-                return <h3 key={index}  className='font-serif text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
+                return <h3 key={index}  className='font-sans text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
             case 'paragraph':
-                return <p key={index} className='font-serif text-white mb-8 text-xl'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
+                return <p key={index} className='font-sans text-white mb-8 text-xl'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
             case 'image':
                 return(
                     <img
@@ -47,8 +47,18 @@ function PostDetail({post}) {
                 </div>
             case 'block-quote':
                 return <div key={index} className='w-full h-auto  px-4 py-1 my-10 border-l-4 border-white items-center '>
-                     <p className='text-white font-serif text-xl'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
+                     <p className='text-white font-sans text-xl'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>
                 </div>
+            case 'bulleted-list':
+                return (
+                    <ul key={index} className='list-disc w-full px-8'>
+                        {modifiedText.map((item, itemindex) => {
+                            return(
+                                <li key={itemindex} className='text-white my-4 text-xl font-sans'>{item}</li>
+                            )
+                        })}
+                    </ul>
+                );
             default:
                 return modifiedText;
         }
@@ -56,7 +66,13 @@ function PostDetail({post}) {
     return (
         <>
             {post.children.map((typeObj, index) => {
-                const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text, item));
+                const children = typeObj.children.map((item, itemindex) => {
+                    if (item.type === "list-item") {
+                        const child = item.children[0].children[0].children[0].text
+                        return getContentFragment(itemindex, child, item)
+                    }
+                    return getContentFragment(itemindex, item.text, item)
+                });
                 return getContentFragment(index, children, typeObj, typeObj.type);
             })}
         </>
