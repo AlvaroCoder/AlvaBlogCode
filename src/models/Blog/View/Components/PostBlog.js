@@ -27,9 +27,9 @@ export default function PostBlog({
                 <img src={img['url']} alt='Imagen' className='w-full h-96  object-cover rounded-lg' />
             </a>
         } 
-        <div className='flex flex-row my-2'>
-            <p className='text-naranja font-sans font-bold'>
-                {categories[0].name}
+        <div className='flex flex-row my-2 justify-between mt-4'>
+            <p className='font-sans font-bold'>
+                {categories.length > 0 && categories.map(item=><span className='mx-2 p-2 rounded-sm bg-naranja text-white'>{item?.name}</span>)}
             </p>
             <p className='ml-4 text-white opacity-40 flex flex-row items-center'>
                 <CalendarTodayIcon className="mr-2" />

@@ -10,7 +10,8 @@ export default function ModelBlog({
   loadingData=false
 })
 {
-
+  console.log(contentPostsBody);
+  
   return (
     <main className='flex-1 flex items-center justify-center bg-black_1 px-6' >
       <section className='flex-1 flex flex-row'>
