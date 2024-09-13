@@ -12,8 +12,8 @@ function postDetailIntro({
         <img className='w-full h-full object-cover rounded-lg  md:w-[720px]' src={iconContent.url} alt={iconContent.id}/>
         </div>
         <div className='md:w-[40%] w-full px-4'>
-            <h1 className='font-sans md:text-6xl text-5xl text-white font-bold'>{heading}</h1>
-            <p className='md:w-[400px] font-sans text-white mt-5 mb-4 text-lg'>{description}</p>
+            <h1 className='font-sans md:text-6xl  text-5xl text-white font-bold'>{heading}</h1>
+            <p className='lg:w-[400px] font-sans text-white mt-5 mb-4 text-lg text-[nowrap]'>{description}</p>
         </div>
     </div>
   )

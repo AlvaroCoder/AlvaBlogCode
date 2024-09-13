@@ -41,7 +41,7 @@ function PostDetail({post}) {
                 )
             case 'code-block':
                 return <div key={index} className=' bg-black_3 p-4 rounded-md my-8 shadow-lg'>
-                    <code className='font-mono whitespace-pre-wrap text-title_white overflow-x-auto' lang='js'>
+                    <code className='font-mono whitespace-pre-wrap text-nowrap text-title_white overflow-x-auto' lang='js'>
                         {modifiedText.map((item,i)=><React.Fragment  key={i}>{item}</React.Fragment>)}
                     </code>
                 </div>

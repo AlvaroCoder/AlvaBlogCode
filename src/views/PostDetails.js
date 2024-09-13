@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getContenPostDetail } from '../utils/fetchDataCMS';
 import {CardTitles, PostDetail, PostDetailIntro, SkeletonCard} from './components'
+import { CommentForm } from './components/Blog';
 function PostDetails() {
     const [detailPosts, setDetailPosts] = useState(null);
     const [Loading, setLoading] = useState(false);
@@ -42,15 +43,18 @@ function PostDetails() {
         <section className='w-full py-6 '>
           {detailPosts ?  <PostDetailIntro {...detailPosts} /> : null}
         </section>  
-        <section className='w-full col-span-full lg:col-span-7 flex md:flex-row flex-col-reverse md:items-start items-center justify-center py-6'>
-          <div className='md:w-[60%] w-full bg-black_2 p-6 rounded-lg '>
+        <section className='w-full col-span-full lg:col-span-7 flex lg:flex-row flex-col-reverse md:items-start items-center justify-center py-6'>
+          <div className='lg:w-[60%] md:px-4 w-full bg-black_2 p-6 rounded-lg '>
             {detailPosts ? <PostDetail post={detailPosts.content.json} /> : null}
           </div>
-          <section className='mx-4 relative md:mb-0 mb-8 before:w-full before:!h-1 md:sticky top-0  p-6  '>
-            <div className='flex flex-col'>
+          <section className='lg:block lg:w-80 hidden mx-4 relative md:mb-0 mb-8 before:w-full before:!h-1 lg:sticky top-0  p-6  '>
+            <div className='flex flex-col justify-center'>
               <CardTitles data={resume} />
             </div>
           </section>
+        </section>
+        <section className='w-full flex justify-center'>
+        <CommentForm/>
         </section>
       </main>
     )

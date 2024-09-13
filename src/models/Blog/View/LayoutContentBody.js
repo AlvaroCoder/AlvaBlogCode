@@ -4,8 +4,9 @@ const URL_IMAGE_NOT_FOUND = "https://res.cloudinary.com/dabyqnijl/image/upload/v
 export default function LayoutContentBody({
   contentPosts=[],
 }) {
+  
   return (
-    <section className='w-full min-h-screen px-6 py-4'>
+    <section className='max-w-screen-md w-full min-h-screen px-6 py-4'>
       <div className='grid  grid-cols-1  gap-6 h-auto '>
         {
           contentPosts.length > 0 ? 

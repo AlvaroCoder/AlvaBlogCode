@@ -55,7 +55,8 @@ module.exports = {
         amarillo_opaco : "rgba(238,155,0,.22)",
         blanco : "#E9D8A6",
         rojo:"#AE2012",
-        naranja : "#FB8500"
+        naranja : "#FB8500",
+        naranja_200 : "#FFB056"
       },
       borderRadius: {
         lg: `var(--radius)`,
