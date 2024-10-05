@@ -25,7 +25,7 @@ function PostDetail({post}) {
                     <h1  id={modifiedText[0]}  className='font-sans border-b-2 px-4 border-b-amarillo text-white text-5xl font-semibold my-10'>{modifiedText.map((item, i) => <React.Fragment key={i} >{item}</React.Fragment>)}</h1>
                 </div>        
             case 'heading-two':
-                return <h2 key={index} className='font-sans text-white text-2xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
+                return <h2 key={index} className='font-sans text-amarillo text-2xl font-semibold mb-2 '>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>
             case 'heading-three':
                 return <h3 key={index}  className='font-sans text-white text-xl font-semibold mb-2'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>
             case 'paragraph':

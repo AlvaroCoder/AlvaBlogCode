@@ -1,1 +1,1 @@
-export const modelPost = {title : '', description : '', id : '', url : '', img : '', createdAt : ''}
+export const modelPost = {title : '', description : '', id : '', url : '', img : '', createdAt : ''}    

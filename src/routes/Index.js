@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import PostDetails from "../views/PostDetails";
-import LayoutBlog from "../views/LayoutBlog";
 import ControllerBlog from "../controllers/ControllerBlog";
-import LayoutPortfolio from "../views/LayoutPortfolio";
+
+import { LayoutBlog, LayoutPortfolio } from "../views/Layouts"
 
 export const routerBrowser = createBrowserRouter([
     {
@@ -22,6 +22,6 @@ export const routerBrowser = createBrowserRouter([
     {
         path : "/portfolio",
         Component :  LayoutPortfolio
-    }
+    },
 
 ]);
